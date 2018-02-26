@@ -66,7 +66,7 @@ public final class Okio {
   }
 
   private static Sink sink(final OutputStream out, final Timeout timeout) {
-    if (out == null) throw new IllegalArgumentException("out == null");
+    if (out == null) throw new IOException("out == null");
     if (timeout == null) throw new IllegalArgumentException("timeout == null");
 
     return new Sink() {
@@ -126,7 +126,7 @@ public final class Okio {
   }
 
   private static Source source(final InputStream in, final Timeout timeout) {
-    if (in == null) throw new IllegalArgumentException("in == null");
+    if (in == null) throw new IOException("in == null");
     if (timeout == null) throw new IllegalArgumentException("timeout == null");
 
     return new Source() {
